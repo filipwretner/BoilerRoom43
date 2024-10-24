@@ -9,18 +9,14 @@ switch-satser
 Funktioner: 
 
 Meny för användarval:
-Meny med tillgängliga operationer (switch-sats)
-En av operationerna ska vara att avsluta operationen
+Meny som väljer om man (switch-sats):
+1. Vill använda kalkylatorn
+2. Vill visa multiplikationstabell
+3. Vill avsluta applikationen
 
-Gör som en lista, exempel:
-1. Addition
-2. Subraktion
-osv.
-10. Avsluta programmet
+Kalkylatorn ska ha:
 
-Skriver användaren 1 -> använd +, skriver användaren 10. avsluta 
-
-För att få med for loop så ska en punkt också vara att skriva ut multiplikations tabells för ett tal (for loop)
+Först en meny där man väljer operation (switch sats) där två alternativ också ska vara att få instruktioner om hur man använder kalkylator samt gå tillbaka till föregående meny plus att man även här ska kunna avsluta applikationen
 
 Användarinteraktion:
 Loopar så att man kan göra nya beräkningar utan att starta om (do-while/while loop)
@@ -36,9 +32,8 @@ Avancerade operationer, rotuträkning, logaritmer eller trigonometri
 
 Variabelhantering, lagra resultat för senare användning
 
-Felhantering och Validering:
-Det går att lösa med något som heter:try-catch-block, MEN det hade varit mer imponerande om ni klarar av att fånga oväntade fel med er tidigare kunskap(denna och tidigare veckors ämnen).
-Implementera mer avancerad validering av användarinmatning.
+Avancerad Felhantering och Validering:
+Lös utan try-catch block, fånga upp fel. Mer avancerad validering av användarinmatning
 
 Anpassad Användarupplevelse:
 Skapa en mer interaktiv meny med tydliga instruktioner. (Tanke: Kan lägga till i menyn att mata in en siffra för att få en guide kring applikationen)
