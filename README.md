@@ -41,7 +41,7 @@ Det går att lösa med något som heter:try-catch-block, MEN det hade varit mer 
 Implementera mer avancerad validering av användarinmatning.
 
 Anpassad Användarupplevelse:
-Skapa en mer interaktiv meny med tydliga instruktioner.
+Skapa en mer interaktiv meny med tydliga instruktioner. (Tanke: Kan lägga till i menyn att mata in en siffra för att få en guide kring applikationen)
 
 Anvisningar för Grupparbetet
 
