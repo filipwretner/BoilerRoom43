@@ -11,8 +11,11 @@ Funktioner:
 Meny för användarval:
 Meny som väljer om man (switch-sats):
 1. Vill använda kalkylatorn
-2. Vill visa multiplikationstabell
-3. Vill avsluta applikationen
+2. Kalkylera kvadrat och kubikrot
+3. Kalkylera naturlig logaritm och logaritm med basen 10
+4. Kalkylera trigonometri: sinus, cosinus och tangens
+5. Vill visa multiplikationstabell
+6. Vill avsluta applikationen
 
 Kalkylatorn ska ha:
 
@@ -27,8 +30,6 @@ Felhantering vid ogiltig inmatning och validering (if-sats och ternary operator)
 
 Utökad funktionalitet:
 Historik över beräkningar, spara i array. Ska kunna komma åt från menyn
-
-Avancerade operationer, rotuträkning, logaritmer eller trigonometri
 
 Variabelhantering, lagra resultat för senare användning
 

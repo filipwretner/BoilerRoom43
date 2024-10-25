@@ -7,8 +7,12 @@ function mainMenu() {
 
         console.log(`Huvudmeny:`);
         console.log(`1. Använd Kalkylatorn`);
-        console.log(`2. Visa Multiplikationstabell`);
-        console.log(`3. Avsluta Applikationen`);
+        console.log(`2. Kalkylera rot`);
+        console.log(`3. Kalkylera logaritm`);
+        console.log(`4. Kalkylera trigonmetri`);
+        console.log(`5. Visa Multiplikationstabell`);
+        console.log(`6. Visa historik`);
+        console.log(`7. Avsluta Applikationen`);
         menuChoice = prompt(`Välkommen! Välj ett av alternativen:`);
 
         switch (menuChoice) {
@@ -19,6 +23,18 @@ function mainMenu() {
                 showMultiplicationTable();
                 break;
             case '3':
+                performRoot();
+                break;
+            case '4':
+                performLog();
+                break;
+            case '5':
+                performTrig();
+                break;
+            case '6':
+                showHistory();
+                break;
+            case '7':
                 console.log(`Avslutar applikationen...`);
                 isRunning = false;
                 break;
@@ -39,14 +55,10 @@ function calculatorMenu() {
         console.log(`3. Multiplikation`);
         console.log(`4. Division`);
         console.log(`5. Modulus`);
-        console.log(`6. Exponentiering`);
-        console.log(`7. Rot`);
-        console.log(`8. Logaritm`);
-        console.log(`9. Trigonometri`);
-        console.log(`10. Visa historik`);
-        console.log(`11. Visa instruktioner`);
-        console.log(`12. Gå tillbaka till huvudmenyn`);
-        console.log(`13. Avsluta applikationen`);
+        console.log(`7. Visa historik`);
+        console.log(`8. Visa instruktioner`);
+        console.log(`9. Gå tillbaka till huvudmenyn`);
+        console.log(`10. Avsluta applikationen`);
         operationChoice = prompt(`Välkommen till kalkylatorn! Välj ett alternativ:`);
 
         switch (operationChoice) {
@@ -69,32 +81,23 @@ function calculatorMenu() {
                 performOperation('**');
                 break;
             case '7':
-                performRoot();
-                break;
-            case '8':
-                performLog();
-                break;
-            case '9':
-                performTrig();
-                break;
-            case '10':
                 showHistory();
                 break;
-            case '11':
+            case '8':
                 console.log(`1. Välj vilken operation du vill genomföra`);
                 console.log(`2. Ange tal med nummer, kan vara två eller ett tal beroende på operation`);
                 console.log(`3. Resultatet av din beräkning sparas i historiken vilket du sedan når genom kalkylatormenyn.`);
                 break;
-            case '12':
+            case '9':
                 return;
-            case '13':
+            case '10':
                 console.log(`Avslutar applikationen...`);
                 isRunning = false;
                 return;
             default:
                 console.log(`Ogiltig inmatning, välj ett av alternativen.`);
         }
-    } while (operationChoice !== '12' && isRunning == true);
+    } while (operationChoice !== '9' && isRunning == true);
 }
 
 function performOperation() {
@@ -200,4 +203,4 @@ function showMultiplicationTable() {
     return;
 }
 
-mainMenu();
+mainMenu();g
