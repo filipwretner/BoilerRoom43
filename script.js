@@ -26,7 +26,7 @@ function mainMenu() {
         5. Kalkylera trigonometri
         6. Visa instruktioner
         7. Visa historik
-        8. Avsluta applikationen`);
+        8. Avsluta applikationen`); // Declaring the variable that decides which function to start
 
         switch (menuChoice) {
 
@@ -50,10 +50,10 @@ function mainMenu() {
                 performTrig();
                 break;
 
-            case '6':
+            case '6': // If the user wants instructions on how to use the application
                 console.log(`1. Välj vilken operation du vill genomföra.`);
-                console.log(`2. Ange de två tal som du vill genomföra operationen med.`);
-                console.log(`3. Resultatet av din beräkning sparas i historiken vilket du sedan når genom kalkylatormenyn.`);
+                console.log(`2. Följ instruktionerna noga, vid vissa kalkyleringar krävs två nummer och vid andra krävs bara ett nummer. Vissa operationer kräver även att du gör ytterligare val av kalkylering.`);
+                console.log(`3. 3. Resultatet av beräkningen sparas sedan i historiken vilket du når genom att mata in '7' i huvudmenyn.`);
                 alert(`
                 1. Välj vad du vill kalkylera eller visa.
                 2. Följ instruktionerna noga, vid vissa kalkyleringar krävs två nummer och vid andra krävs bara ett nummer. Vissa operationer kräver även att du gör ytterligare val av kalkylering.    
@@ -81,6 +81,8 @@ function mainMenu() {
 
 // Function for performing more basic calculations
 function performOperation() {
+
+    // Initiating the inputs and declaring the result variable
     let firstUserInput = parseFloat(prompt(`Ange det första talet:`));
     let operationChoice = prompt(`Vilken operation vill du genomföra? Skriv in det tecken som motsvarar operation: +, -, *, /, % eller **`);
     let secondUserInput = parseFloat(prompt(`Ange det andra talet:`));
@@ -276,10 +278,10 @@ function showHistory() {
         alert(`Inga beräkningar har genomförts än`);
 
     } else { // Prints the whole array
-        console.log(``);
+        console.log(`Beräkningshistorik:\n ${hist.join(', ')}`);
         alert(`Beräkningshistorik:\n ${hist.join(', ')}`);
 
     }
 }
 
-mainMenu();
+mainMenu(); // Making sure the application actually runs
