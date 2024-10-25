@@ -55,6 +55,7 @@ function calculatorMenu() {
         console.log(`3. Multiplikation`);
         console.log(`4. Division`);
         console.log(`5. Modulus`);
+        console.log(`6. Exponentiering`);
         console.log(`7. Visa historik`);
         console.log(`8. Visa instruktioner`);
         console.log(`9. Gå tillbaka till huvudmenyn`);
@@ -84,8 +85,8 @@ function calculatorMenu() {
                 showHistory();
                 break;
             case '8':
-                console.log(`1. Välj vilken operation du vill genomföra`);
-                console.log(`2. Ange tal med nummer, kan vara två eller ett tal beroende på operation`);
+                console.log(`1. Välj vilken operation du vill genomföra.`);
+                console.log(`2. Ange de två tal som du vill genomföra operationen med.`);
                 console.log(`3. Resultatet av din beräkning sparas i historiken vilket du sedan når genom kalkylatormenyn.`);
                 break;
             case '9':
@@ -203,4 +204,4 @@ function showMultiplicationTable() {
     return;
 }
 
-mainMenu();g
+mainMenu();
