@@ -65,11 +65,13 @@ function mainMenu() {
 
             case '8': // Exit application
                 console.log(`Avslutar applikationen...`);
+                alert(`Avslutar applikationen...`);
                 isRunning = false;
                 break;
 
             default: // Error message if user puts in different than the numbers 1-7
                 console.log(`Ogiltig inmatning, välj ett av alternativen.`);
+                alert(`Ogiltig inmatning, välj ett av alternativen.`);
 
         }
 
@@ -85,6 +87,7 @@ function performOperation() {
 
     if (isNaN(firstUserInput) || isNaN(secondUserInput)) { // Making sure the user put in numbers in the prompt
         console.log(`Ogiltig inmatning, skriv in ett nummer.`);
+        alert(`Ogiltig inmatning, skriv in ett nummer`);
         return;
     } 
 
@@ -105,7 +108,8 @@ function performOperation() {
 
     "Ogiltig inmatning, välj en av de tillgängliga operatörerna"; // Error message if user enters a different input than what's shown in the menu
 
-    console.log(`${result}`);
+    console.log(`Svaret blir: ${result}`);
+    alert(`Svaret blir: ${result}`);
 
 }
 
@@ -116,10 +120,12 @@ function performRoot() {
 
     if (isNaN(userInput)) { // Error message if the user puts in text in the second prompt
         console.log(`Ogiltig inmatning, vänligen skriv ett tal.`);
+        alert(`Ogiltig inmatning, vänligen skriv ett tal.`);
         return;
 
     } else if (rootChoice === 1 && userInput < 0) { // Error message if the user tries to take the square root of a negative number
         console.log(`Kan inte dra kvadratroten ur ett negativt tal, vänligen skriv in ett positivt tal.`);
+        alert(`Kan inte dra kvadratroten ur ett negativt tal, vänligen skriv in ett positivt tal.`);
         return;
 
     }
@@ -130,15 +136,18 @@ let result;
         case 1: // Square root calculation
             result = Math.sqrt(userInput);
             console.log(`Kvadratrotet för talet ${userInput} är: ${result}`);
+            alert(`Kvadratrotet för talet ${userInput} är: ${result}`);
             break;
 
         case 2: // Cubic root calculation
             result = Math.cbrt(userInput);
             console.log(`Kubikroten för talet ${userInput} är ${result}`);
+            alert(`Kubikroten för talet ${userInput} är ${result}`);
             break;
 
         default: // Error if user puts in something other than 1 or 2 in the first prompt
             console.log(`Ogiltig inmatning, välj ett av alternativen.`);
+            alert(`Ogiltig inmatning, välj ett av alternativen.`);
     }
 }
 
@@ -149,6 +158,7 @@ function performLog() {
 
     if (isNaN(userInput)) { // Checks if user put in number like instructed
         console.log(`Ogiltig inmatning, vänligen skriv in ett tal.`);
+        alert(`Ogiltig inmatning, vänligen skriv in ett tal.`);
         return;
     }
 
@@ -159,15 +169,18 @@ function performLog() {
         case 1: // Calculation for natural logarithm
             result = Math.log(userInput);
             console.log(`Naturlig logaritm för talet ${userInput} är: ${result}`);
+            alert(`Naturlig logaritm för talet ${userInput} är: ${result}`);
             break;
 
         case 2: // Calculation for logarithm with a base of 10
             result = Math.log10(userInput);
             console.log(`Logaritmen med basen 10 för talet ${userInput} är ${result}`);
+            alert(`Logaritmen med basen 10 för talet ${userInput} är ${result}`);
             break;
 
         default: // Error if user puts in something other than 1 or 2 in the first prompt
             console.log(`Ogiltig inmatning, välj ett av alternativen.`);
+            alert(`Ogiltig inmatning, välj ett av alternativen.`);
     }
 }
 
@@ -178,6 +191,7 @@ function performTrig() {
 
     if (isNaN(userInput)) { // Checks if the user put in a number like instructed
         console.log(`Ogiltig inmatning, vänligen skriv in ett tal.`);
+        alert(`Ogiltig inmatning, vänligen skriv in ett tal.`);
         return;
     }
 
@@ -188,20 +202,24 @@ function performTrig() {
         case 1: // Calculation for sinus
             result = Math.sin(angleRad);
             console.log(`Sinus: ${result}`);
+            alert(`Sinus: ${result}`);
             break;
 
         case 2: // Calculation for cosinus
             result = Math.cos(angleRad);
             console.log(`Cosinus: ${result}`);
+            alert(`Cosinus: ${result}`);
             break;
 
         case 3: // Calculation for tangens
             result = Math.tan(angleRad);
             console.log(`Tangens: ${result}`);
+            alert(`Tangens: ${result}`);
             break;
 
         default: // Error if user puts in something other than 1, 2 or 3 in the first prompt 
             console.log(`Ogiltig inmatning, välj ett av alternativen.`);
+            alert(`Ogiltig inmatning, välj ett av alternativen.`);
     }
 
 }
