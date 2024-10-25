@@ -1,4 +1,5 @@
 let isRunning = true; // This variable is used to check whether the user wants the application to keep running or not
+let hist = [];
 
 // Function for the main menu
 function mainMenu() {
@@ -69,7 +70,7 @@ function mainMenu() {
                 isRunning = false;
                 break;
 
-            default: // Error message if user puts in different than the numbers 1-7
+            default: // Error message if user puts in different than the numbers 1-8
                 console.log(`Ogiltig inmatning, välj ett av alternativen.`);
                 alert(`Ogiltig inmatning, välj ett av alternativen.`);
 
@@ -108,9 +109,51 @@ function performOperation() {
 
     "Ogiltig inmatning, välj en av de tillgängliga operatörerna"; // Error message if user enters a different input than what's shown in the menu
 
-    console.log(`Svaret blir: ${result}`);
-    alert(`Svaret blir: ${result}`);
+    console.log(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
+    alert(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
+    
+    if ((operationChoice === '/' || operationChoice === '%') && secondUserInput === 0) {} else {
+        hist.push(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
+    }
 
+}
+
+// Function to print out the multiplication table for a number
+function showMultiplicationTable() {
+    let firstUserInput = Number(prompt(`Vilket tal vill du visa multiplikationstabellen för?`));
+    let secondUserInput = Number(prompt(`Hur mycket av multiplikationstabellen ska visas? (Sista talet som multipliceras)`));
+
+    let table = ""; // Declared as empty string, otherwise it prints out undefined when showing the table
+
+    for (let i = 1; i <= secondUserInput; i++) { // Prints out the multiplication table for the first number until the index reaches the second number the user put in
+        table += `${firstUserInput} * ${i} = ${firstUserInput * i}\n`
+    }
+
+    console.log(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
+    alert(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
+
+    hist.push(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`); // Adds the multiplicationtable to the array
+
+    return;
+}
+
+// Function to print out the multiplication table for a number
+function showMultiplicationTable() {
+    let firstUserInput = Number(prompt(`Vilket tal vill du visa multiplikationstabellen för?`));
+    let secondUserInput = Number(prompt(`Hur mycket av multiplikationstabellen ska visas? (Sista talet som multipliceras)`));
+
+    let table = ""; // Declared as empty string, otherwise it prints out undefined when showing the table
+
+    for (let i = 1; i <= secondUserInput; i++) { // Prints out the multiplication table for the first number until the index reaches the second number the user put in
+        table += `${firstUserInput} * ${i} = ${firstUserInput * i}\n`
+    }
+
+    console.log(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
+    alert(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
+
+    hist.push(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`); // Adds the multiplicationtable to the array
+
+    return;
 }
 
 // Function for performing root calculations
@@ -130,24 +173,30 @@ function performRoot() {
 
     }
 
-let result;
+    let result;
 
     switch (rootChoice) {
         case 1: // Square root calculation
             result = Math.sqrt(userInput);
-            console.log(`Kvadratrotet för talet ${userInput} är: ${result}`);
-            alert(`Kvadratrotet för talet ${userInput} är: ${result}`);
+            console.log(`Kvadratrotet av ${userInput} är: ${result}`);
+            alert(`Kvadratrotet av ${userInput} är: ${result}`);
             break;
 
         case 2: // Cubic root calculation
             result = Math.cbrt(userInput);
-            console.log(`Kubikroten för talet ${userInput} är ${result}`);
-            alert(`Kubikroten för talet ${userInput} är ${result}`);
+            console.log(`Kubikroten av talet ${userInput} är ${result}`);
+            alert(`Kubikroten av talet ${userInput} är ${result}`);
             break;
 
         default: // Error if user puts in something other than 1 or 2 in the first prompt
             console.log(`Ogiltig inmatning, välj ett av alternativen.`);
             alert(`Ogiltig inmatning, välj ett av alternativen.`);
+    }
+
+    if (rootChoice === 1) {
+        hist.push(`Kvadratroten av ${userInput}: = ${result}`)
+    } else if (rootChoice === 2) {
+        hist.push(`Kubikroten av ${userInput}: = ${result}`)
     }
 }
 
@@ -181,6 +230,12 @@ function performLog() {
         default: // Error if user puts in something other than 1 or 2 in the first prompt
             console.log(`Ogiltig inmatning, välj ett av alternativen.`);
             alert(`Ogiltig inmatning, välj ett av alternativen.`);
+    }
+
+    if (logChoice === 1) {
+        hist.push(`Log(${userInput}) = ${result}`)
+    } else if (logChoice === 2) {
+        hist.push(`Log10(${userInput}) = ${result}`)
     }
 }
 
@@ -222,23 +277,28 @@ function performTrig() {
             alert(`Ogiltig inmatning, välj ett av alternativen.`);
     }
 
-}
-
-// Function to print out the multiplication table for a number
-function showMultiplicationTable() {
-    let firstInput = Number(prompt(`Vilket tal vill du visa multiplikationstabellen för?`));
-    let secondInput = Number(prompt(`Hur mycket av multiplikationstabellen ska visas? (Sista talet som multipliceras)`));
-
-    for (let i = 1; i <= secondInput; i++) { // Prints out the multiplication table for the first number until the index reaches the second number the user put in
-        console.log(`${firstInput} * ${i} = ${firstInput * i}`);
+    if (trigChoice === 1) { // Adds different string to array depending on trigonometry choice
+        hist.push(`Sinus för vinkeln ${userInput}: sin(${angleRad}) = ${result}`);
+    } else if (trigChoice === 2) {
+        hist.push(`Cosinus för vinkeln ${userInput}: cos(${angleRad}) = ${result}`)
+    } else if (trigChoice === 3) {
+        hist.push(`Tangens för vinkeln ${userInput}: tan(${angleRad}) = ${result}`)
     }
 
-    return;
 }
 
 // Function to print the history of previous calculations
 function showHistory() {
 
+    if (hist.length === 0) { // If the array is empty we print that out 
+        console.log(`Inga beräkningar har genomförts än`);
+        alert(`Inga beräkningar har genomförts än`);
+
+    } else { // Prints the whole array
+        console.log(``);
+        alert(`Beräkningshistorik:\n ${hist.join(', ')}`);
+
+    }
 }
 
 mainMenu();
