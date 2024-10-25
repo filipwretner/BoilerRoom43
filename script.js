@@ -91,7 +91,7 @@ function performOperation() {
     // Initiating result-variable depending on the chosen operator with the help of ternary operators. 
     result = operationChoice === '+' ? firstUserInput + secondUserInput: // Addition
 
-    operationChoice === '-' ? firstUserInput - secondUserInput: // Subratction
+    operationChoice === '-' ? firstUserInput - secondUserInput: // Subraction
 
     operationChoice === '*' ? firstUserInput * secondUserInput: // Multiplication
 
