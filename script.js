@@ -1,4 +1,4 @@
-let isRunning = true; // This variable is used to check if the user wants the application to keep running or not
+let isRunning = true; // This variable is used to check whether the user wants the application to keep running or not
 
 // Function for the main menu
 function mainMenu() {
@@ -7,20 +7,30 @@ function mainMenu() {
 
     do {
 
-        console.log(`Huvudmeny:`);
-        console.log(`1. Använd Kalkylatorn`);
-        console.log(`2. Visa Multiplikationstabell`);
-        console.log(`3. Kalkylera rot`);
-        console.log(`4. Kalkylera logaritm`);
-        console.log(`5. Kalkylera trigonmetri`);
-        console.log(`6. Visa historik`);
-        console.log(`7. Avsluta Applikationen`);
-        menuChoice = prompt(`Välkommen! Välj ett av alternativen:`);
+        console.log(`Huvudmeny:
+        1. Använd kalkylatorn för enkla operationer
+        2. Visa multiplikationstabell
+        3. Kalkylera rot
+        4. Kalkylera logaritm
+        5. Kalkylera trigonmetri
+        6. Visa instruktioner
+        7. Visa historik
+        8. Avsluta applikationen`);
+
+        menuChoice = prompt(`Välkommen! Välj ett av alternativen:
+        1. Använd kalkylatorn för enkla operationer
+        2. Visa multiplikationstabell
+        3. Kalkylera rot
+        4. Kalkylera logaritm
+        5. Kalkylera trigonometri
+        6. Visa instruktioner
+        7. Visa historik
+        8. Avsluta applikationen`);
 
         switch (menuChoice) {
 
-            case '1': // Separate menu for simpler calculations
-                calculatorMenu();
+            case '1': // Simpler calculations
+                performOperation();
                 break;
 
             case '2': // If the user wants to print out the multiplication table for a number 
@@ -39,15 +49,25 @@ function mainMenu() {
                 performTrig();
                 break;
 
-            case '6': // Print out previous results
+            case '6':
+                console.log(`1. Välj vilken operation du vill genomföra.`);
+                console.log(`2. Ange de två tal som du vill genomföra operationen med.`);
+                console.log(`3. Resultatet av din beräkning sparas i historiken vilket du sedan når genom kalkylatormenyn.`);
+                alert(`
+                1. Välj vad du vill kalkylera eller visa.
+                2. Följ instruktionerna noga, vid vissa kalkyleringar krävs två nummer och vid andra krävs bara ett nummer. Vissa operationer kräver även att du gör ytterligare val av kalkylering.    
+                3. Resultatet av beräkningen sparas sedan i historiken vilket du når genom att mata in '7' i huvudmenyn.`);
+                break;
+
+            case '7': // Print out previous results
                 showHistory();
                 break;
 
-            case '7': // Exit application
+            case '8': // Exit application
                 console.log(`Avslutar applikationen...`);
                 isRunning = false;
                 break;
-                
+
             default: // Error message if user puts in different than the numbers 1-7
                 console.log(`Ogiltig inmatning, välj ett av alternativen.`);
 
@@ -56,79 +76,10 @@ function mainMenu() {
     } while (isRunning == true); // Menu keeps running until this condition isnt met (as long as the user doesnt put in 7)
 }
 
-// Function for the menu that decides which operation the calculator is going to perform
-function calculatorMenu() {
-
-    let operationChoice; // Used to determine what operation the user wants to use
-
-    do {
-        console.log(`Meny för kalkylatorn:`);
-        console.log(`1. Addition`);
-        console.log(`2. Subtraktion`);
-        console.log(`3. Multiplikation`);
-        console.log(`4. Division`);
-        console.log(`5. Modulus`);
-        console.log(`6. Exponentiering`);
-        console.log(`7. Visa historik`);
-        console.log(`8. Visa instruktioner`);
-        console.log(`9. Gå tillbaka till huvudmenyn`);
-        console.log(`10. Avsluta applikationen`);
-        operationChoice = prompt(`Välkommen till kalkylatorn! Välj ett alternativ:`);
-
-        switch (operationChoice) {
-
-            // First set of cases decides which operation is going to be performaed
-            case '1':
-                performOperation('+');
-                break;
-
-            case '2':
-                performOperation('-');
-                break;
-
-            case '3':
-                performOperation('*');
-                break;
-
-            case '4':
-                performOperation('/');
-                break;
-
-            case '5':
-                performOperation('%');
-                break;
-
-            case '6':
-                performOperation('**');
-                break;
-
-            case '7': // Showing previous results 
-                showHistory();
-                break;
-
-            case '8': // Short instructions on how to use the application
-                console.log(`1. Välj vilken operation du vill genomföra.`);
-                console.log(`2. Ange de två tal som du vill genomföra operationen med.`);
-                console.log(`3. Resultatet av din beräkning sparas i historiken vilket du sedan når genom kalkylatormenyn.`);
-                break;
-
-            case '9': // Back to main menu
-                return;
-
-            case '10': // Exit application
-                console.log(`Avslutar applikationen...`);
-                isRunning = false;
-                return;
-
-            default:
-                console.log(`Ogiltig inmatning, välj ett av alternativen.`);
-        }
-    } while (operationChoice !== '9' && isRunning == true); //The menu runs until the user wants to go back to the main menu or exit the whole application
-}
-
 // Function for performing more basic calculations
-function performOperation(operationChoice) {
+function performOperation() {
     let firstUserInput = parseFloat(prompt(`Ange det första talet:`));
+    let operationChoice = prompt(`Vilken operation vill du genomföra? Skriv in det tecken som motsvarar operation: +, -, *, /, % eller **`);
     let secondUserInput = parseFloat(prompt(`Ange det andra talet:`));
     let result;
 
@@ -267,6 +218,7 @@ function showMultiplicationTable() {
     return;
 }
 
+// Function to print the history of previous calculations
 function showHistory() {
 
 }
