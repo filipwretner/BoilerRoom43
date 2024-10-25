@@ -1,5 +1,5 @@
 let isRunning = true; // This variable is used to check whether the user wants the application to keep running or not
-let hist = [];
+let hist = []; // Initiating an empty array to store calculations
 
 // Function for the main menu
 function mainMenu() {
@@ -116,25 +116,6 @@ function performOperation() {
         hist.push(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
     }
 
-}
-
-// Function to print out the multiplication table for a number
-function showMultiplicationTable() {
-    let firstUserInput = Number(prompt(`Vilket tal vill du visa multiplikationstabellen för?`));
-    let secondUserInput = Number(prompt(`Hur mycket av multiplikationstabellen ska visas? (Sista talet som multipliceras)`));
-
-    let table = ""; // Declared as empty string, otherwise it prints out undefined when showing the table
-
-    for (let i = 1; i <= secondUserInput; i++) { // Prints out the multiplication table for the first number until the index reaches the second number the user put in
-        table += `${firstUserInput} * ${i} = ${firstUserInput * i}\n`
-    }
-
-    console.log(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
-    alert(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`);
-
-    hist.push(`Multiplikationstabell för talet ${firstUserInput}:\n ${table}`); // Adds the multiplicationtable to the array
-
-    return;
 }
 
 // Function to print out the multiplication table for a number
