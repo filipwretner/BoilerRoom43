@@ -224,8 +224,8 @@ function performLog() {
 
 // Function for peforming trigonometric calculations
 function performTrig() {
-    let trigChoice = Number(prompt(`Vill du använda 1. Sinus 2. Cosinus eller 3. Tan`));
-    let userInput = Number(prompt(`Ange grader på vinkel:`));
+    let trigChoice = Number(prompt(`Vill du använda: 1. Sinus 2. Cosinus eller 3. Tangens`));
+    let userInput = Number(prompt(`Ange grader på en vinkel:`));
 
     if (isNaN(userInput)) { // Checks if the user put in a number like instructed
         console.log(`Ogiltig inmatning, vänligen skriv in ett tal.`);
