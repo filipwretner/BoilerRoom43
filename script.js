@@ -51,7 +51,7 @@ function mainMenu() {
                 break;
 
             case '6': // If the user wants instructions on how to use the application
-                console.log(`1. Välj vilken operation du vill genomföra.`);
+                console.log(`1. Välj vad du vill kalkylera eller visa.`);
                 console.log(`2. Följ instruktionerna noga, vid vissa kalkyleringar krävs två nummer och vid andra krävs bara ett nummer. Vissa operationer kräver även att du gör ytterligare val av kalkylering.`);
                 console.log(`3. 3. Resultatet av beräkningen sparas sedan i historiken vilket du når genom att mata in '7' i huvudmenyn.`);
                 alert(`
