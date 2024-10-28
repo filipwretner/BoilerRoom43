@@ -111,10 +111,11 @@ function performOperation() {
 
     "Ogiltig inmatning, välj en av de tillgängliga operatörerna"; // Error message if user enters a different input than what's shown in the menu
 
-    console.log(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
-    alert(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
     
+    // Making sure we only show the result if it's a real value
     if ((operationChoice === '/' || operationChoice === '%') && secondUserInput === 0) {} else {
+        console.log(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
+        alert(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
         hist.push(`${firstUserInput} ${operationChoice} ${secondUserInput} = ${result}`);
     }
 
